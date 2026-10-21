@@ -1,471 +1,417 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
-
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
     <title>Dynamic Recipe Project</title>
     <!-- bootstrap stylesheet -->
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta/css/bootstrap.min.css" integrity="sha384-/Y6pD6FV/Vv2HJnA6t+vslU6fwYXjCFtcEpHbNJ0lyAFsXTsjBbfaDjzALeQsN6M"
-        crossorigin="anonymous">
-    <!-- javascript -->
-    <script src="../../../js/js.cookie.js"></script>
-    <script src="js/timer.js"></script>
+    <link rel="stylesheet" href="../../../vendor/bootstrap.min.css" />
+
     <script src="js/recipeAdjust.js"></script>
 
     <!-- style sheet -->
-    <link rel="stylesheet" href="../../css/recipeStyle.css">
+    <link rel="stylesheet" href="../../css/recipeStyle.css" />
 
     <!-- icons -->
-    <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
-    <!-- Global site tag (gtag.js) - Google Analytics -->
-    <script async src="https://www.googletagmanager.com/gtag/js?id=UA-105627616-1"></script>
-    <script>
-        window.dataLayer = window.dataLayer || [];
 
-        function gtag() {
-            dataLayer.push(arguments);
-        }
-        gtag('js', new Date());
+    <link rel="stylesheet" href="../../../css/demo.css" />
+  </head>
 
-        gtag('config', 'UA-105627616-1');
-    </script>
-
-
-
-    <script>
-        //search for cookie visitor
-        var visits = Cookies.get('chickenSandwichVisitor');
-        //if else statement. if no cookie with the name visits is found, visits is equal to 1,
-        if (!visits) {
-            //the value for the new cookie;
-            visits = 1;
-
-        }
-        // else, if there is a cookie named visitor, increase its value by 1
-        else {
-            //increase the value of visits by 1
-            visits = parseInt(visits) + 1;
-        }
-        //set the new cookie with the name visitor, and the incrementing value, with the expiration date. the expiration date will keep increasing with each visit if visited within the expiration date.
-        Cookies.set("chickenSandwichVisitor", visits, {
-            expires: 7
-        });
-    </script>
-
-<script>
-        function printPage() {
-            window.print();
-        }
-    </script>
-</head>
-
-<body>
+  <body>
+    <p class="demo-label">A coursework recipe demo by Andres Macias</p>
 
     <section class="containerChickenSandwichRecipePage">
-        <div class="banner">
-            <img src="../../../images/banner-edited.jpg" class="img-fluid" alt="Responsive image">
-        </div>
-        <div class="container">
-        </div>
-        <nav class="navbar navbar-expand-lg navbar-light bg-light">
-            <a class="navbar-brand" href="../../../index.html">Dynamic Recipes</a>
-            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarTogglerDemo02" aria-controls="navbarTogglerDemo02"
-                aria-expanded="false" aria-label="Toggle navigation">
-                <span class="navbar-toggler-icon"></span>
-            </button>
+      <div class="banner">
+        <img
+          src="../../../images/banner-edited.jpg"
+          class="img-fluid"
+          alt="Responsive image"
+        />
+      </div>
+      <div class="container"></div>
+      <nav class="demo-nav" aria-label="Main navigation">
+        <a class="brand" href="../../../index.html">Dynamic Recipes</a
+        ><a href="../../../about.html">About this project</a>
+        <details>
+          <summary>Recipes</summary>
+          <ul>
+            <li><a href="../../beef/chili/chili.html">Crockpot Chili</a></li>
+            <li>
+              <a href="../chickenBroc/chickenBroc.html"
+                >Chicken with Broccoli</a
+              >
+            </li>
+            <li><a href="chickenSandwich.html">Fried Chicken Sandwich</a></li>
+          </ul>
+        </details>
+      </nav>
 
-            <div class="collapse navbar-collapse" id="navbarTogglerDemo02">
-                <ul class="navbar-nav mr-auto mt-2 mt-lg-0">
-                    <li class="nav-item active">
-                        <a class="nav-link" href="../../../index.html">Home
-                            <span class="sr-only">(current)</span>
-                        </a>
-                    </li>
-                    <li class="nav-item active">
-                        <a class="nav-link" href="../../../about.html">About</a>
-                    </li>
-                    <div class="btn-group">
-                        <button type="button" class="btn btn-info dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                            Browse
-                        </button>
-                        <div class="dropdown-menu">
-                            <div class="row">
-                                <div class="col-sm-4">
-                                    <h6 class="dropdown-header">Courses</h6>
-                                    <div class="dropdown-divider"></div>
-                                    <a class="dropdown-item" href="#">Appetizers</a>
-                                    <a class="dropdown-item" href="#"> Breakfast</a>
-                                    <a class="dropdown-item" href="#">Lunch</a>
-                                    <a class="dropdown-item" href="#">Dinner</a>
-                                </div>
-                                <div class="col-sm-4">
-                                    <h6 class="dropdown-header">Main Ingrediant</h6>
-                                    <div class="dropdown-divider"></div>
-                                    <a class="dropdown-item" href="#">Beef</a>
-                                    <a class="dropdown-item" href="#"> Chicken</a>
-                                    <a class="dropdown-item" href="#">Vegetables</a>
-
-                                </div>
-                                <div class="col-sm-4">
-                                    <h6 class="dropdown-header">Cuisine</h6>
-                                    <div class="dropdown-divider"></div>
-                                    <a class="dropdown-item" href="#">Asian</a>
-                                    <a class="dropdown-item" href="#"> Southern</a>
-                                    <a class="dropdown-item" href="#">Italian</a>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <form class="form-inline my-2 my-lg-0">
-                        <input class="form-control mr-sm-2" type="text" placeholder="Search for recipes">
-                        <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
-                    </form>
-                </ul>
+      <div class="container-fluid recipeContainerChickenSandwich">
+        <section class="featuredRecipe">
+          <div class="row">
+            <div class="col-sm-6">
+              <h4>Chicken Sandwich</h4>
+              <p>recipe by: Elliot R.</p>
+              <p>
+                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam
+                non eros vitae mauris molestie dictum. Cras molestie bibendum
+                vulputate. Etiam eget lectus non orci tincidunt luctus id a
+                tellus. In aliquet sagittis leo laoreet pellentesque.
+              </p>
             </div>
-        </nav>
+            <div class="col-sm-6">
+              <img
+                src="../../images/chickenSandwich.jpeg"
+                class="img-fluid"
+                alt="Responsive image"
+              />
+            </div>
+          </div>
+          <div class="row">
+            <div class="col-sm-12">
+              <h4>Difficulty: Medium</h4>
+            </div>
+            <div class="col-sm-4">
+              <button
+                type="button"
+                class="btn btn-outline-success"
+                data-action="printPage"
+              >
+                print
+              </button>
+            </div>
+          </div>
+        </section>
+        <!--end featured recipe-->
 
-        <div class="container-fluid recipeContainerChickenSandwich">
+        <section class="ingredients">
+          <div class="row ingredientHead">
+            <div class="col-sm-3">
+              <h2>Ingredients</h2>
+            </div>
 
-            <section class="featuredRecipe">
-                <div class="row">
-                    <div class="col-sm-6">
-                        <h4>Chicken Sandwich</h4>
-                        <p>recipe by: Elliot R.</p>
-                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam non eros vitae mauris molestie dictum.
-                            Cras molestie bibendum vulputate. Etiam eget lectus non orci tincidunt luctus id a tellus. In
-                            aliquet sagittis leo laoreet pellentesque.</p>
-                    </div>
-                    <div class="col-sm-6">
-                        <img src="../../images/chickenSandwich.jpeg" class="img-fluid" alt="Responsive image">
-                        
-                    </div>
+            <div class="col-sm-2">
+              <h6>Prep time:</h6>
+              <p><span>15</span> min</p>
+            </div>
+
+            <div class="col-sm-2">
+              <h6>Cooking time</h6>
+              <p>20 minutes</p>
+            </div>
+
+            <div class="col-sm-2">
+              <h6>Serving size:</h6>
+              <p>
+                <span id="servSize">4</span>
+              </p>
+            </div>
+          </div>
+          <section class="recipeOptions">
+            <div class="row">
+              <div class="col-sm-12">
+                <button
+                  type="button"
+                  class="btn btn-success"
+                  data-toggle="collapse"
+                  aria-expanded="true"
+                  aria-controls="ingredientsCollapse"
+                  data-target="#ingredientsCollapse"
+                >
+                  Close/open recipe section
+                </button>
+              </div>
+            </div>
+          </section>
+          <section class="collapse show" id="ingredientsCollapse">
+            <div class="row">
+              <div class="col-5 col-sm-4">
+                <button
+                  type="button"
+                  class="btn btn-success"
+                  data-action="adjustRecipeOriginal"
+                >
+                  Original recipe
+                </button>
+              </div>
+
+              <div class="col-5 col-sm-4">
+                <button
+                  type="button"
+                  class="btn btn-success"
+                  data-action="adjustRecipeHalf"
+                >
+                  Half recipe
+                </button>
+              </div>
+
+              <div class="col-12 col-sm-4">
+                <button
+                  type="button"
+                  class="btn btn-success"
+                  data-action="adjustRecipeDouble"
+                >
+                  Double recipe
+                </button>
+              </div>
+            </div>
+            <div class="row">
+              <div class="col-sm-4">
+                <ul>
+                  <li>
+                    <span id="ingr1">1 1/2</span> cups of all-purpose flour
+                  </li>
+                  <li><span id="ingr2">1</span> egg</li>
+                  <li><span id="ingr3">1/4</span> cup ranch dressing mix</li>
+                  <li>
+                    <span id="ingr4">2</span> boneless skinless chicken breast
+                  </li>
+                  <li><span id="ingr5">1</span> cup vegetable oil</li>
+                  <li><span id="ingr6">1/2</span> cup of mayo</li>
+                </ul>
+              </div>
+              <div class="col-sm-4">
+                <ul>
+                  <span></span>
+                  <li><span id="ingr7">1/4</span> cup sriracha sauce</li>
+                  <li><span id="ingr8">4</span> ciabatta bread rolls</li>
+                  <li><span id="ingr9">1</span> jar of dill pickle chips</li>
+                </ul>
+              </div>
+            </div>
+          </section>
+          <!-- end ingredient list section -->
+        </section>
+        <!--end ingrediants section -->
+
+        <section class="directionsChickenSandwich">
+          <div class="row">
+            <div class="col-sm-12">
+              <h2>Directions</h2>
+            </div>
+          </div>
+          <div class="row">
+            <section class="directionsButton">
+              <div class="row">
+                <div class="col-sm-12">
+                  <button
+                    type="button"
+                    class="btn btn-success"
+                    data-toggle="collapse"
+                    aria-expanded="true"
+                    aria-controls="directionsCollapse"
+                    data-target="#directionsCollapse"
+                  >
+                    step 1
+                  </button>
                 </div>
-                <div class="row">
-                    <div class="col-sm-12">
-                        <h4>Difficulty: Medium</h4>
-                    </div>
-                    <div class="col-sm-4">
-                            <button type="button" class="btn btn-outline-success material-icons" onclick="printPage()">print</button>
-                    </div>
-                </div>
+              </div>
             </section>
-            <!--end featured recipe-->
-
-            <section class="ingredients">
-                <div class="row ingredientHead">
-                    <div class="col-sm-3">
-                        <h2>Ingredients</h2>
-                    </div>
-                    <span class="material-icons">hourglass_empty</span>
-                    <div class="col-sm-2">
-                        <h6>Prep time:</h6>
-                        <p>
-                            <span>15</span> min</p>
-                    </div>
-                    <span class="material-icons">access_time</span>
-                    <div class="col-sm-2">
-                        <h6>Cooking time</h6>
-                        <p>20 minutes</p>
-                    </div>
-                    <span class="material-icons">pie_chart</span>
-                    <div class="col-sm-2">
-                        <h6>Serving size:</h6>
-                        <p>
-                            <span id="servSize">4</span>
-                        </p>
-                    </div>
+            <div class="col-sm-6 collapse show" id="directionsCollapse">
+              <h6>Step 1</h6>
+              <p>Preheat oven to 350 degrees F (175 degrees C).</p>
+            </div>
+          </div>
+          <div class="row">
+            <section class="directionsButton">
+              <div class="row">
+                <div class="col-sm-12">
+                  <button
+                    type="button"
+                    class="btn btn-success"
+                    data-toggle="collapse"
+                    aria-expanded="true"
+                    aria-controls="directionsCollapse2"
+                    data-target="#directionsCollapse2"
+                  >
+                    step 2
+                  </button>
                 </div>
-                <section class="recipeOptions">
-                    <div class="row">
-                        <div class="col-sm-12">
-                            <button type="button" class="btn btn-success" data-toggle="collapse" href="#ingredientsCollapse" aria-expanded="true" aria-controls="ingredientsCollapse">Close/open recipe section</button>
-                        </div>
-
-                    </div>
-                </section>
-                <section class="collapse show" id="ingredientsCollapse">
-                    <div class="row">
-                        <div class="col-5 col-sm-4">
-                            <button type="button" class="btn btn-success" onclick="adjustRecipeOriginal()">Original recipe</button>
-                        </div>
-                        
-                        <div class="col-5 col-sm-4">
-                            <button type="button" class="btn btn-success" onclick="adjustRecipeHalf()">Half recipe</button>
-                        </div>
-                   
-                        <div class="col-12 col-sm-4">
-                            <button type="button" class="btn btn-success" onclick="adjustRecipeDouble()">Double recipe</button>
-                        </div>
-
-
-
-                    </div>
-                    <div class="row">
-                        <div class="col-sm-4">
-                            <ul>
-                                <li>
-                                    <span id="ingr1">1 1/2</span> cups of all-purpose flour</li>
-                                <li>
-                                    <span id="ingr2">1</span> egg</li>
-                                <li>
-                                    <span id="ingr3">1/4</span> cup ranch dressing mix</li>
-                                <li>
-                                    <span id="ingr4">2</span> boneless skinless chicken breast</li>
-                                <li>
-                                    <span id="ingr5">1</span> cup vegetable oil</li>
-                                <li>
-                                    <span id="ingr6">1/2</span> cup of mayo</li>
-                            </ul>
-                        </div>
-                        <div class="col-sm-4">
-                            <ul>
-                                <span></span>
-                                <li>
-                                    <span id="ingr7">1/4</span> cup sriracha sauce</li>
-                                <li>
-                                    <span id="ingr8">4</span> ciabatta bread rolls</li>
-                                <li>
-                                    <span id="ingr9">1</span> jar of dill pickle chips</li>
-                            </ul>
-                        </div>
-                    </div>
-                </section>
-                <!-- end ingredient list section -->
-
+              </div>
             </section>
-            <!--end ingrediants section -->
-
-            <section class="directionsChickenSandwich">
-                <div class="row">
-                    <div class="col-sm-12">
-                        <h2>Directions</h2>
-                    </div>
+            <div class="col-sm-6 collapse show" id="directionsCollapse2">
+              <h6>Step 2</h6>
+              <p>Place 1/2 cup flour in a small bowl.</p>
+            </div>
+          </div>
+          <div class="row">
+            <section class="directionsButton">
+              <div class="row">
+                <div class="col-sm-12">
+                  <button
+                    type="button"
+                    class="btn btn-success"
+                    data-toggle="collapse"
+                    aria-expanded="true"
+                    aria-controls="directionsCollapse3"
+                    data-target="#directionsCollapse3"
+                  >
+                    step 3
+                  </button>
                 </div>
-                <div class="row">
-                    <section class="directionsButton">
-                        <div class="row">
-                            <div class="col-sm-12">
-                                <button type="button" class="btn btn-success" data-toggle="collapse" href="#directionsCollapse" aria-expanded="true" aria-controls="directionsCollapse">step 1</button>
-                            </div>
-                        </div>
-
-                    </section>
-                    <div class="col-sm-6 collapse show" id="directionsCollapse">
-                        <h6>Step 1</h6>
-                        <p>Preheat oven to 350 degrees F (175 degrees C).</p>
-                    </div>
-                </div>
-                <div class="row">
-                    <section class="directionsButton">
-                        <div class="row">
-                            <div class="col-sm-12">
-                                <button type="button" class="btn btn-success" data-toggle="collapse" href="#directionsCollapse2" aria-expanded="true" aria-controls="directionsCollapse2">step 2</button>
-                            </div>
-                        </div>
-
-                    </section>
-                    <div class="col-sm-6 collapse show" id="directionsCollapse2">
-                        <h6>Step 2</h6>
-                        <p>Place 1/2 cup flour in a small bowl.</p>
-                    </div>
-                </div>
-                <div class="row">
-                    <section class="directionsButton">
-                        <div class="row">
-                            <div class="col-sm-12">
-                                <button type="button" class="btn btn-success" data-toggle="collapse" href="#directionsCollapse3" aria-expanded="true" aria-controls="directionsCollapse3">step 3</button>
-                            </div>
-                        </div>
-
-                    </section>
-                    <div class="col-sm-6 collapse show" id="directionsCollapse3">
-
-                        <h6>Step 3</h6>
-                        <p>Beat egg in a shallow bowl with a fork.</p>
-
-                    </div>
-                </div>
-                <div class="row">
-                    <section class="directionsButton">
-                        <div class="row">
-                            <div class="col-sm-12">
-                                <button type="button" class="btn btn-success" data-toggle="collapse" href="#directionsCollapse4" aria-expanded="true" aria-controls="directionsCollapse4">step 4</button>
-                            </div>
-                        </div>
-
-                    </section>
-                    <div class="col-sm-6 collapse show" id="directionsCollapse4">
-
-                        <h6>Step 4</h6>
-                        <p>Place 1 cup flour in a bowl; mix in ranch dressing.</p>
-
-
-                    </div>
-                </div>
-                <div class="row">
-                    <section class="directionsButton">
-                        <div class="row">
-                            <div class="col-sm-12">
-                                <button type="button" class="btn btn-success" data-toggle="collapse" href="#directionsCollapse5" aria-expanded="true" aria-controls="directionsCollapse5">step 5</button>
-                            </div>
-                        </div>
-
-                    </section>
-                    <div class="col-sm-6 collapse show" id="directionsCollapse5">
-
-                        <h6>Step 5</h6>
-                        <p>Split chicken breasts to create 4 pieces. Coat each piece with plain flour, dip in egg, and coat
-                            with flour-ranch mixture. Place on a wire rack set over a rimmed baking sheet.</p>
-
-                    </div>
-                </div>
-                <div class="row">
-                    <section class="directionsButton">
-                        <div class="row">
-                            <div class="col-sm-12">
-                                <button type="button" class="btn btn-success" data-toggle="collapse" href="#directionsCollapse6" aria-expanded="true" aria-controls="directionsCollapse6">step 6</button>
-                            </div>
-                        </div>
-
-                    </section>
-                    <div class="col-sm-6 collapse show" id="directionsCollapse6">
-
-                        <h6>Step 6</h6>
-                        <p>Heat oil in a large saucepan until almost boiling. Add 2 pieces chicken; fry until lightly golden,
-                            turning once, about 5 minutes. Return chicken to the wire rack. Repeat with remaining 2 pieces
-                            chicken.
-                        </p>
-
-
-                    </div>
-                </div>
-                <div class="row">
-                    <section class="directionsButton">
-                        <div class="row">
-                            <div class="col-sm-12">
-                                <button type="button" class="btn btn-success" data-toggle="collapse" href="#directionsCollapse7" aria-expanded="true" aria-controls="directionsCollapse7">step 7</button>
-                            </div>
-                        </div>
-
-                    </section>
-                    <div class="col-sm-6 collapse show" id="directionsCollapse7">
-
-                        <h6>Step 7</h6>
-                        <p>Bake chicken in the preheated oven until juices run clear, about 10 minutes.</p>
-
-                    </div>
-                </div>
-                <div class="row">
-                    <section class="directionsButton">
-                        <div class="row">
-                            <div class="col-sm-12">
-                                <button type="button" class="btn btn-success" data-toggle="collapse" href="#directionsCollapse8" aria-expanded="true" aria-controls="directionsCollapse8">step 8</button>
-                            </div>
-                        </div>
-
-                    </section>
-                    <div class="col-sm-6 collapse show" id="directionsCollapse8">
-
-                        <h6>Step 8</h6>
-
-                        <p>Mix mayonnaise and sriracha sauce together in a small bowl. Spread on rolls. Place 4 pickle slices
-                            on each roll. Place 1 piece of chicken on each sandwich.</p>
-
-                    </div>
-                </div>
-
+              </div>
             </section>
-            <!-- end directions section -->
-
-
-        </div>
-        <!--end container -->
-
-        <!-- SUGGESTIONS -->
-        <div class="container">
-            <section class="suggestions">
-                <div class="row">
-                    <div class="col-sm-12">
-                        <h2>Suggestions:</h2>
-                    </div>
+            <div class="col-sm-6 collapse show" id="directionsCollapse3">
+              <h6>Step 3</h6>
+              <p>Beat egg in a shallow bowl with a fork.</p>
+            </div>
+          </div>
+          <div class="row">
+            <section class="directionsButton">
+              <div class="row">
+                <div class="col-sm-12">
+                  <button
+                    type="button"
+                    class="btn btn-success"
+                    data-toggle="collapse"
+                    aria-expanded="true"
+                    aria-controls="directionsCollapse4"
+                    data-target="#directionsCollapse4"
+                  >
+                    step 4
+                  </button>
                 </div>
-                <div class="row">
-                    <div class="col-sm-4">
-                        <a href="#">
-                            <div class="card">
-
-                                <img class="card-img-top" src="../../images/chickenBroc.jpeg" alt="Card image cap">
-                                <div class="card-body">
-                                    <p class="card-text">Chicken with Broccoli</p>
-                                </div>
-
-                            </div>
-                        </a>
-                    </div>
-                    <div class="col-sm-4">
-                        <a href="#">
-                            <div class="card">
-                                <img class="card-img-top" src="../../images/eggSalad.jpeg" alt="Card image cap">
-                                <div class="card-body">
-                                    <p class="card-text">Egg Salad</p>
-                                </div>
-                            </div>
-                        </a>
-                    </div>
-                    <div class="col-sm-4">
-                        <a href="#">
-                            <div class="card">
-                                <img class="card-img-top" src="../../images/veggieMedley.jpeg" alt="Card image cap">
-                                <div class="card-body">
-                                    <p class="card-text">Veggie Medley</p>
-                                </div>
-                            </div>
-                        </a>
-                    </div>
-                </div>
+              </div>
             </section>
+            <div class="col-sm-6 collapse show" id="directionsCollapse4">
+              <h6>Step 4</h6>
+              <p>Place 1 cup flour in a bowl; mix in ranch dressing.</p>
+            </div>
+          </div>
+          <div class="row">
+            <section class="directionsButton">
+              <div class="row">
+                <div class="col-sm-12">
+                  <button
+                    type="button"
+                    class="btn btn-success"
+                    data-toggle="collapse"
+                    aria-expanded="true"
+                    aria-controls="directionsCollapse5"
+                    data-target="#directionsCollapse5"
+                  >
+                    step 5
+                  </button>
+                </div>
+              </div>
+            </section>
+            <div class="col-sm-6 collapse show" id="directionsCollapse5">
+              <h6>Step 5</h6>
+              <p>
+                Split chicken breasts to create 4 pieces. Coat each piece with
+                plain flour, dip in egg, and coat with flour-ranch mixture.
+                Place on a wire rack set over a rimmed baking sheet.
+              </p>
+            </div>
+          </div>
+          <div class="row">
+            <section class="directionsButton">
+              <div class="row">
+                <div class="col-sm-12">
+                  <button
+                    type="button"
+                    class="btn btn-success"
+                    data-toggle="collapse"
+                    aria-expanded="true"
+                    aria-controls="directionsCollapse6"
+                    data-target="#directionsCollapse6"
+                  >
+                    step 6
+                  </button>
+                </div>
+              </div>
+            </section>
+            <div class="col-sm-6 collapse show" id="directionsCollapse6">
+              <h6>Step 6</h6>
+              <p>
+                Heat oil in a large saucepan until almost boiling. Add 2 pieces
+                chicken; fry until lightly golden, turning once, about 5
+                minutes. Return chicken to the wire rack. Repeat with remaining
+                2 pieces chicken.
+              </p>
+            </div>
+          </div>
+          <div class="row">
+            <section class="directionsButton">
+              <div class="row">
+                <div class="col-sm-12">
+                  <button
+                    type="button"
+                    class="btn btn-success"
+                    data-toggle="collapse"
+                    aria-expanded="true"
+                    aria-controls="directionsCollapse7"
+                    data-target="#directionsCollapse7"
+                  >
+                    step 7
+                  </button>
+                </div>
+              </div>
+            </section>
+            <div class="col-sm-6 collapse show" id="directionsCollapse7">
+              <h6>Step 7</h6>
+              <p>
+                Bake chicken in the preheated oven until juices run clear, about
+                10 minutes.
+              </p>
+            </div>
+          </div>
+          <div class="row">
+            <section class="directionsButton">
+              <div class="row">
+                <div class="col-sm-12">
+                  <button
+                    type="button"
+                    class="btn btn-success"
+                    data-toggle="collapse"
+                    aria-expanded="true"
+                    aria-controls="directionsCollapse8"
+                    data-target="#directionsCollapse8"
+                  >
+                    step 8
+                  </button>
+                </div>
+              </div>
+            </section>
+            <div class="col-sm-6 collapse show" id="directionsCollapse8">
+              <h6>Step 8</h6>
 
-        </div>
+              <p>
+                Mix mayonnaise and sriracha sauce together in a small bowl.
+                Spread on rolls. Place 4 pickle slices on each roll. Place 1
+                piece of chicken on each sandwich.
+              </p>
+            </div>
+          </div>
+        </section>
+        <!-- end directions section -->
+      </div>
+      <!--end container -->
 
-
+      <!-- SUGGESTIONS -->
+      <div class="container">
+        <section class="suggestions">
+          <h2>More recipes</h2>
+          <ul>
+            <li><a href="../../beef/chili/chili.html">Crockpot Chili</a></li>
+            <li>
+              <a href="../chickenBroc/chickenBroc.html"
+                >Chicken with Broccoli</a
+              >
+            </li>
+          </ul>
+        </section>
+      </div>
     </section>
     <!-- end container chicken sandwich recipe page -->
     <footer class="footerStyle">
-        <div class="row">
-            <div class="col-sm-4">
-                <h6>About Us:</h6>
-                <p>Our Company</p>
-                <p>Investor Relations</p>
-
-            </div>
-            <div class="col-sm-4">
-                <h6>We are located at:</h6>
-                <address>
-                    8604 N Oak ave, Spingfield, IL
-                    <br>
-
-                </address>
-            </div>
-            <div class="col-sm-4">
-                <h6>follow us on:</h6>
-                <p> <img src="../../../f_logo_online/png/FB-f-Logo__blue_29.png" alt="facebooklogo"></p>
-            </div>
-        </div>
-
+      <p>
+        Dynamic Recipes · Original coursework, refreshed for a static demo.
+        <a href="../../../about.html">About the project</a>
+      </p>
     </footer>
 
-
-
-    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN"
-        crossorigin="anonymous"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.11.0/umd/popper.min.js" integrity="sha384-b/U6ypiBEHpOf/4+1nzFpr53nxSS+GLCkfwBdFNTxtclqqenISfwAzpKaMNFNmj4"
-        crossorigin="anonymous"></script>
-    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta/js/bootstrap.min.js" integrity="sha384-h0AbiXch4ZDo7tp9hKZ4TsHbi047NrKGLO3SEJAg45jXxnGIfYzk4Si90RDIqNm1"
-        crossorigin="anonymous"></script>
-
-
-</body>
-
+    <script src="../../../js/demo.js" defer=""></script>
+  </body>
 </html>

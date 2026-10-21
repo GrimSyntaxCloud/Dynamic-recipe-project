@@ -1,5 +1,5 @@
 function adjustRecipe() {
-    var selectValue = $("#recipeOptions").val();
+    var selectValue = document.getElementById("recipeOptions").value;
     if (selectValue == "half") {
         document.getElementById("servSize").innerHTML = "3";
         document.getElementById("ingr1").innerHTML = "1";
