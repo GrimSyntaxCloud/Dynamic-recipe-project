@@ -1,173 +1,159 @@
 <!doctype html>
 <html lang="en">
   <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
-    <title>Dynamic Recipe Project</title>
-    <!-- bootstrap stylesheet -->
-    <link rel="stylesheet" href="vendor/bootstrap.min.css" />
-
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <meta
+      name="description"
+      content="Three comfort-food recipes. Adjust the portions, follow the steps, and print your next kitchen favorite."
+    />
+    <title>The everyday food edit · Dynamic Recipes</title>
     <link rel="stylesheet" href="css/style.css" />
-
-    <link rel="stylesheet" href="css/demo.css" />
+    <script type="module" src="js/demo.js"></script>
   </head>
-
   <body>
-    <p class="demo-label">A coursework recipe demo by Andres Macias</p>
-
-    <div class="banner">
-      <img
-        src="images/banner-edited.jpg"
-        class="img-fluid"
-        alt="Responsive image"
-      />
-    </div>
-    <div class="container"></div>
-
-    <nav class="demo-nav" aria-label="Main navigation">
-      <a class="brand" href="index.html">Dynamic Recipes</a
-      ><a href="about.html">About this project</a>
-      <details>
-        <summary>Recipes</summary>
-        <ul>
-          <li><a href="recipe/beef/chili/chili.html">Crockpot Chili</a></li>
-          <li>
-            <a href="recipe/chicken/chickenBroc/chickenBroc.html"
-              >Chicken with Broccoli</a
-            >
-          </li>
-          <li>
-            <a href="recipe/chicken/chickenSandwich/chickenSandwich.html"
-              >Fried Chicken Sandwich</a
-            >
-          </li>
-        </ul>
-      </details>
-    </nav>
-
-    <div class="container-fluid">
-      <div class="container">
-        <section class="featuredRecipes">
-          <div class="card-columns">
-            <a href="recipe/beef/chili/chili.html">
-              <div class="card">
-                <img
-                  class="card-img-top"
-                  src="images/chili.jpeg"
-                  alt="Card image cap"
-                />
-                <div class="card-body">
-                  <h4 class="card-title">Crockpot Chili</h4>
-                  <p class="card-text">
-                    The chili recipe uses the finest ingredients found at the
-                    supermarket. Once you get a taste of the organic blend of
-                    spices and vegetables your tastebuds will be transported to
-                    flavor town.
-                  </p>
-                </div>
-              </div>
-            </a>
-
-            <div class="card p-3">
-              <blockquote class="blockquote mb-0 card-body">
-                <p>
-                  WOW! So good! I made this recipe for my family after work and
-                  we were not disappointed!
-                </p>
-                <footer class="blockquote-footer">
-                  <small class="text-muted">
-                    Fictional review
-                    <cite title="Source Title">Alex352</cite>
-                  </small>
-                </footer>
-              </blockquote>
-            </div>
-
-            <a href="recipe/chicken/chickenBroc/chickenBroc.html">
-              <div class="card">
-                <img
-                  class="card-img-top"
-                  src="images/chickenBroc.jpeg"
-                  alt="Card image cap"
-                />
-                <div class="card-body">
-                  <h4 class="card-title">Chicken with broccoli</h4>
-                  <p class="card-text">
-                    Tender chicken and broccoli with portion controls for a
-                    smaller or larger meal.
-                  </p>
-                </div>
-              </div>
-            </a>
-            <div class="card bg-success p-3 text-center">
-              <blockquote class="blockquote mb-0">
-                <p>
-                  <q>Best website to find recipes for my family.</q>
-                </p>
-                <footer class="blockquote-footer">
-                  <small>
-                    Fictional review
-                    <cite title="Source Title">Jessie P.</cite>
-                  </small>
-                </footer>
-              </blockquote>
-            </div>
-            <div class="card text-center">
-              <div class="card-body">
-                <h4 class="card-title">Three recipes to explore</h4>
-                <p class="card-text">
-                  Open a recipe to adjust portions or print the instructions.
-                </p>
-              </div>
-            </div>
-
-            <a href="recipe/chicken/chickenSandwich/chickenSandwich.html">
-              <div class="card">
-                <img
-                  class="card-img"
-                  src="images/chickenSandwich.jpeg"
-                  alt="Card image"
-                />
-              </div>
-              <div class="card">
-                <div class="card-body">
-                  <h4 class="card-title">Fried Chicken Sandwich</h4>
-                  <p class="card-text">
-                    Want a chicken sandwich that not only tastes great but is
-                    easy to make? Try this classic chicken sandwich.
-                  </p>
-                </div>
-              </div>
-            </a>
-            <div class="card p-3 text-right">
-              <blockquote class="blockquote mb-0">
-                <p>
-                  I usually don't eat fried foods but this is one of my go to
-                  meals for when I need comfort food!
-                </p>
-                <footer class="blockquote-footer">
-                  <small class="text-muted">
-                    Fictional review
-                    <cite title="Source Title">Elliot L.</cite>
-                  </small>
-                </footer>
-              </blockquote>
-            </div>
+    <a class="skip" href="#main">Skip to content</a>
+    <header class="topbar">
+      <a class="wordmark" href="index.html"
+        >DR<span class="brand-dot">✳</span></a
+      >
+      <nav aria-label="Main navigation">
+        <a href="index.html#recipes">The recipes</a
+        ><a href="about.html">Our story</a>
+      </nav>
+      <button class="motion-toggle" type="button" aria-pressed="false">
+        Pause motion
+      </button>
+    </header>
+    <main id="main">
+      <section class="masthead">
+        <div class="edition">
+          <span>THE EVERYDAY FOOD EDIT</span
+          ><span>VOL. 01 / THREE GOOD RECIPES</span>
+        </div>
+        <h1>
+          DYNAMIC<br /><span>RECIPES</span
+          ><span class="asterisk" aria-hidden="true">✳</span>
+        </h1>
+        <div class="masthead-bottom">
+          <p>A little messy.<br />A lot delicious.</p>
+          <p>
+            Good food, your way. Pick a recipe.<br />Make it half. Make it
+            double. Make it yours.
+          </p>
+          <a href="#recipes">Dig in <span aria-hidden="true">↓</span></a>
+        </div>
+      </section>
+      <section class="collection" id="recipes" aria-label="Recipe collection">
+        <a class="recipe-card card-1" href="recipe/beef/chili/chili.html"
+          ><div class="card-photo">
+            <img
+              src="images/chili.jpeg"
+              alt="Crockpot Chili"
+              fetchpriority="high"
+            /><span class="photo-tag">Slow & soulful</span
+            ><span class="card-arrow" aria-hidden="true">↗</span>
           </div>
-        </section>
+          <div class="card-copy">
+            <span class="recipe-number">01 / THE COLLECTION</span>
+            <h2>Crockpot Chili</h2>
+            <p>
+              A slow-simmered bowl of beans, warming spices and all the good
+              toppings.
+            </p>
+            <span class="card-meta">25 min prep <span>•</span> Medium</span>
+          </div></a
+        >
+        <aside class="kitchen-note">
+          <span>THE KITCHEN RULE</span>
+          <p>More flavor.<br />Less fuss.</p>
+          <div class="note-star" aria-hidden="true">✳</div>
+          <small
+            >Three comfort-food classics.<br />Plenty of room to make them your
+            own.</small
+          >
+        </aside>
+        <a
+          class="recipe-card card-2"
+          href="recipe/chicken/chickenBroc/chickenBroc.html"
+          ><div class="card-photo">
+            <img
+              src="images/chickenBroc.jpeg"
+              alt="Chicken with Broccoli"
+              loading="lazy"
+            /><span class="photo-tag">Weeknight favorite</span
+            ><span class="card-arrow" aria-hidden="true">↗</span>
+          </div>
+          <div class="card-copy">
+            <span class="recipe-number">02 / THE COLLECTION</span>
+            <h2>Chicken with Broccoli</h2>
+            <p>
+              Tender chicken, crisp broccoli and a glossy ginger-soy sauce.
+              Dinner, sorted.
+            </p>
+            <span class="card-meta">15 min prep <span>•</span> Easy</span>
+          </div></a
+        ><a
+          class="recipe-card card-3"
+          href="recipe/chicken/chickenSandwich/chickenSandwich.html"
+          ><div class="card-photo">
+            <img
+              src="images/chickenSandwich.jpeg"
+              alt="Fried Chicken Sandwich"
+              loading="lazy"
+            /><span class="photo-tag">Crunch time</span
+            ><span class="card-arrow" aria-hidden="true">↗</span>
+          </div>
+          <div class="card-copy">
+            <span class="recipe-number">03 / THE COLLECTION</span>
+            <h2>Fried Chicken Sandwich</h2>
+            <p>
+              Golden chicken, a little sriracha heat and pickles piled onto a
+              soft roll.
+            </p>
+            <span class="card-meta">15 min prep <span>•</span> Medium</span>
+          </div></a
+        >
+      </section>
+      <section class="how-it-works">
+        <span class="eyebrow">FROM SCREEN TO SUPPER</span>
+        <div>
+          <h2>A recipe that<br />fits your table.</h2>
+          <ol>
+            <li>
+              <span>01</span>
+              <p>
+                <strong>Find your favorite.</strong><br />Three recipes, no
+                endless scrolling.
+              </p>
+            </li>
+            <li>
+              <span>02</span>
+              <p>
+                <strong>Set your portions.</strong><br />Original, half or
+                double. We do the math.
+              </p>
+            </li>
+            <li>
+              <span>03</span>
+              <p>
+                <strong>Take it to the kitchen.</strong><br />Follow the steps
+                or print a clean copy.
+              </p>
+            </li>
+          </ol>
+        </div>
+      </section>
+    </main>
+    <footer>
+      <a class="footer-brand" href="index.html"
+        >Dynamic Recipes<span>↗</span></a
+      >
+      <div>
+        <p>Small collection. Big appetite.</p>
+        <p>A coursework project by Andres Macias.</p>
+        <a href="about.html">About this project</a>
       </div>
-      <!--end container -->
-    </div>
-    <!--end fluid container-->
-
-    <footer class="footerStyle">
-      <p>
-        Dynamic Recipes · Original coursework, refreshed for a static demo.
-        <a href="about.html">About the project</a>
-      </p>
     </footer>
-
-    <script src="js/demo.js" defer=""></script>
   </body>
 </html>

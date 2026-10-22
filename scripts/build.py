@@ -7,7 +7,7 @@ import re
 import shutil
 ROOT = Path(__file__).resolve().parents[1]
 OUT = ROOT / 'dist'
-SOURCES = ['index.html', 'about.html', 'css', 'images', 'js', 'recipe', 'vendor']
+SOURCES = ['index.html', 'about.html', 'css', 'images', 'js', 'recipe']
 shutil.rmtree(OUT, ignore_errors=True)
 OUT.mkdir()
 for name in SOURCES:
