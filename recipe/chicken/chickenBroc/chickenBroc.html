@@ -1,314 +1,218 @@
 <!doctype html>
 <html lang="en">
   <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
-    <title>Dynamic Recipe Project</title>
-    <!-- bootstrap stylesheet -->
-    <link rel="stylesheet" href="../../../vendor/bootstrap.min.css" />
-
-    <script src="js/recipeAdjust.js"></script>
-
-    <!-- style sheet -->
-    <link rel="stylesheet" href="../../css/recipeStyle.css" />
-
-    <!-- icons -->
-
-    <link rel="stylesheet" href="../../../css/demo.css" />
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <meta
+      name="description"
+      content="Three comfort-food recipes. Adjust the portions, follow the steps, and print your next kitchen favorite."
+    />
+    <title>Chicken with Broccoli · Dynamic Recipes</title>
+    <link rel="stylesheet" href="../../../css/style.css" />
+    <script type="module" src="../../../js/demo.js"></script>
   </head>
-
   <body>
-    <p class="demo-label">A coursework recipe demo by Andres Macias</p>
-    <section class="containerRecipes">
-      <nav class="demo-nav" aria-label="Main navigation">
-        <a class="brand" href="../../../index.html">Dynamic Recipes</a
-        ><a href="../../../about.html">About this project</a>
-        <details>
-          <summary>Recipes</summary>
-          <ul>
-            <li><a href="../../beef/chili/chili.html">Crockpot Chili</a></li>
-            <li><a href="chickenBroc.html">Chicken with Broccoli</a></li>
-            <li>
-              <a href="../chickenSandwich/chickenSandwich.html"
-                >Fried Chicken Sandwich</a
-              >
-            </li>
-          </ul>
-        </details>
+    <a class="skip" href="#main">Skip to content</a>
+    <header class="topbar">
+      <a class="wordmark" href="../../../index.html"
+        >DR<span class="brand-dot">✳</span></a
+      >
+      <nav aria-label="Main navigation">
+        <a href="../../../index.html#recipes">The recipes</a
+        ><a href="../../../about.html">Our story</a>
       </nav>
-      <div class="container-fluid">
-        <div class="container recipeContainerChickenBroc">
-          <section class="featuredRecipe">
-            <div class="row">
-              <div class="col-sm-6">
-                <h4>Chicken with Broccoli</h4>
-                <p>recipe by: Allison S.</p>
-                <p>
-                  orem ipsum dolor sit amet, consectetur adipiscing elit. Etiam
-                  non eros vitae mauris molestie dictum. Cras molestie bibendum
-                  vulputate. Etiam eget lectus non orci tincidunt luctus id a
-                  tellus. In aliquet sagittis leo laoreet pellentesque.
-                </p>
-              </div>
-              <div class="col-sm-6">
-                <img
-                  src="../../images/chickenBroc.jpeg"
-                  class="img-fluid"
-                  alt="Responsive image"
-                />
-              </div>
-            </div>
-            <div class="row">
-              <div class="col-sm-12">
-                <h4>Difficulty: Easy</h4>
-              </div>
-              <div class="col-sm-4">
-                <button
-                  type="button"
-                  class="btn btn-dark"
-                  data-action="printPage"
-                >
-                  print
-                </button>
-              </div>
-            </div>
-          </section>
-          <!--end featured recipe-->
-
-          <section class="ingredients">
-            <div class="row ingredientHead">
-              <div class="col-sm-3">
-                <h2>Ingredients</h2>
-              </div>
-
-              <div class="col-sm-2">
-                <h6>Prep time:</h6>
-                <p><span>15</span> min</p>
-              </div>
-
-              <div class="col-sm-2">
-                <h6>Cooking time</h6>
-                <p>20 minutes</p>
-              </div>
-
-              <div class="col-sm-2">
-                <h6>Serving size:</h6>
-                <p>
-                  <span id="servSize">3</span>
-                </p>
-              </div>
-            </div>
-            <section class="recipeOptions">
-              <div class="row">
-                <div class="col-sm-12">
-                  <button
-                    type="button"
-                    class="btn btn-success"
-                    data-toggle="collapse"
-                    aria-expanded="true"
-                    aria-controls="ingredientsCollapse"
-                    data-target="#ingredientsCollapse"
-                  >
-                    Close/open recipe section
-                  </button>
-                </div>
-              </div>
-            </section>
-            <section class="collapse show" id="ingredientsCollapse">
-              <div class="row">
-                <div class="col-sm-2">
-                  <input
-                    type="radio"
-                    name="optradio"
-                    id="original"
-                    checked=""
-                    data-action="adjustRecipeOriginal"
-                  />
-                  <label for="original" class="radio-inline">
-                    <span>
-                      <span></span> </span
-                    >Original recipe</label
-                  >
-                </div>
-                <div class="col-sm-2">
-                  <input
-                    type="radio"
-                    name="optradio"
-                    id="half"
-                    data-action="adjustRecipeHalf"
-                  />
-                  <label for="half" class="radio-inline">
-                    <span>
-                      <span></span> </span
-                    >Half recipe</label
-                  >
-                </div>
-                <div class="col-sm-2">
-                  <input
-                    type="radio"
-                    name="optradio"
-                    id="double"
-                    data-action="adjustRecipeDouble"
-                  />
-                  <label for="double" class="radio-inline">
-                    <span>
-                      <span></span> </span
-                    >Double recipe</label
-                  >
-                </div>
-              </div>
-
-              <div class="row">
-                <div class="col-sm-4">
-                  <ul>
-                    <li><span id="ingr1">2/3</span> cup soy sauce</li>
-                    <li><span id="ingr2">1/4</span> cup brown sugar</li>
-                    <li><span id="ingr3">1/2</span> tsp. ground ginger</li>
-                    <li><span id="ingr4">1/4</span> tsp red pepper flakes</li>
-                    <li>
-                      <span id="ingr5">1</span> tsp. hot chili powder (optional)
-                    </li>
-                    <li><span id="ingr6">2</span> Tbsp. of water</li>
-                  </ul>
-                </div>
-                <div class="col-sm-4">
-                  <ul>
-                    <span></span>
-                    <li><span id="ingr7">2</span> Tbsp. of cornstarch</li>
-                    <li><span id="ingr8">2</span> tsp. of vegetable oil</li>
-                    <li>
-                      <span id="ingr9">3</span> skinless boneless chicken breast
-                      halves, cut into chunks
-                    </li>
-                    <li><span id="ingr10">1</span> onion sliced</li>
-                    <li><span id="ingr11">3</span> cups broccoli florets</li>
-                  </ul>
-                </div>
-              </div>
-            </section>
-            <!-- end ingredient list section -->
-          </section>
-          <!--end ingredients section -->
-
-          <section class="directionsChickenBroc">
-            <div class="row">
-              <div class="col-sm-12">
-                <h2>Directions</h2>
-              </div>
-            </div>
-            <div class="row">
-              <section class="directionsButton">
-                <div class="row">
-                  <div class="col-sm-12">
-                    <button
-                      type="button"
-                      class="btn btn-success"
-                      data-toggle="collapse"
-                      aria-expanded="true"
-                      aria-controls="directionsCollapse"
-                      data-target="#directionsCollapse"
-                    >
-                      step 1
-                    </button>
-                  </div>
-                </div>
-              </section>
-              <div class="col-sm-6 collapse show" id="directionsCollapse">
-                <p>
-                  Stir soy sauce, brown sugar, ginger, and red pepper flakes
-                  together in a bowl to dissolve sugar into the liquid. Mix
-                  water and cornstarch together in a small bowl; stir with a
-                  whisk until cornstarch dissolves completely.
-                </p>
-              </div>
-            </div>
-            <div class="row">
-              <section class="directionsButton">
-                <div class="row">
-                  <div class="col-sm-12">
-                    <button
-                      type="button"
-                      class="btn btn-success"
-                      data-toggle="collapse"
-                      aria-expanded="true"
-                      aria-controls="directionsCollapse2"
-                      data-target="#directionsCollapse2"
-                    >
-                      step 2
-                    </button>
-                  </div>
-                </div>
-              </section>
-              <div class="col-sm-6 collapse show" id="directionsCollapse2">
-                <p>
-                  Heat oil in a large skillet over high heat. Fry chicken and
-                  onion in hot oil until the chicken is no longer pink in the
-                  center and the onion is tender, 5 to 7 minutes. Stir broccoli
-                  with the chicken and onion; saute until the broccoli is hot,
-                  about 5 minutes. Push the chicken and vegetables mixture to
-                  the side of the skillet.
-                </p>
-              </div>
-            </div>
-            <div class="row">
-              <section class="directionsButton">
-                <div class="row">
-                  <div class="col-sm-12">
-                    <button
-                      type="button"
-                      class="btn btn-success"
-                      data-toggle="collapse"
-                      aria-expanded="true"
-                      aria-controls="directionsCollapse3"
-                      data-target="#directionsCollapse3"
-                    >
-                      step 3
-                    </button>
-                  </div>
-                </div>
-              </section>
-              <div class="col-sm-6 collapse show" id="directionsCollapse3">
-                <p>
-                  Pour the soy sauce mixture into the vacant part of the
-                  skillet. Stir the cornstarch slurry into the soy sauce mixture
-                  until the color is consistent. Move the chicken and vegetables
-                  back into the center to the pan; saute until the sauce
-                  thickens and coats the chicken and vegetables, about 5 minutes
-                  more.
-                </p>
-              </div>
-            </div>
-          </section>
-          <!-- end directions section -->
-        </div>
-        <!--end container -->
+      <button class="motion-toggle" type="button" aria-pressed="false">
+        Pause motion
+      </button>
+    </header>
+    <main id="main" class="recipe-page">
+      <div class="recipe-heading">
+        <a class="back-link" href="../../../index.html#recipes"
+          >← Back to the collection</a
+        ><span class="eyebrow">RECIPE 02 / WEEKNIGHT FAVORITE</span>
+        <h1>Chicken with Broccoli</h1>
+        <p>
+          Tender chicken, crisp broccoli and a glossy ginger-soy sauce. Dinner,
+          sorted.
+        </p>
       </div>
-      <!--end fluid container-->
-      <!-- SUGGESTIONS -->
-      <div class="container">
-        <section class="suggestions">
-          <h2>More recipes</h2>
-          <ul>
-            <li><a href="../../beef/chili/chili.html">Crockpot Chili</a></li>
-            <li>
-              <a href="../chickenSandwich/chickenSandwich.html"
-                >Fried Chicken Sandwich</a
-              >
-            </li>
-          </ul>
+      <div class="recipe-spread">
+        <div class="recipe-cover">
+          <img
+            src="../../images/chickenBroc.jpeg"
+            alt="Chicken with Broccoli"
+          /><span class="cover-mark" aria-hidden="true"
+            >GOOD<br />FOOD<br />ONLY ✳</span
+          >
+          <p>Original coursework recipe credit: Allison S.</p>
+        </div>
+        <section class="recipe-facts" aria-label="Recipe details">
+          <div class="fact-title">
+            THE GOOD STUFF <span aria-hidden="true">↙</span>
+          </div>
+          <dl>
+            <div>
+              <dt>Prep</dt>
+              <dd>15 min</dd>
+            </div>
+            <div>
+              <dt>Cook</dt>
+              <dd>20 min</dd>
+            </div>
+            <div>
+              <dt>Difficulty</dt>
+              <dd>Easy</dd>
+            </div>
+            <div>
+              <dt>Servings</dt>
+              <dd><span id="servSize" data-quantity="3">3</span></dd>
+            </div>
+          </dl>
+          <p>
+            Cooking times stay the same when portions change. Adjust pan size or
+            cook in batches as needed.
+          </p>
+          <button class="print-button" type="button">
+            Print recipe <span aria-hidden="true">↗</span>
+          </button>
         </section>
       </div>
-    </section>
-    <!--end container for recipes -->
-
-    <footer class="footerStyle">
-      <p>
-        Dynamic Recipes · Original coursework, refreshed for a static demo.
-        <a href="../../../about.html">About the project</a>
-      </p>
+      <div class="cook-layout">
+        <section class="ingredients-panel">
+          <div class="eyebrow">MAKE IT YOUR SIZE</div>
+          <h2>Ingredients</h2>
+          <fieldset class="portion-controls">
+            <legend>Adjust portions</legend>
+            <button type="button" data-scale="0.5" aria-pressed="false">
+              ½ Half</button
+            ><button type="button" data-scale="1" aria-pressed="true">
+              1× Original</button
+            ><button type="button" data-scale="2" aria-pressed="false">
+              2× Double
+            </button>
+          </fieldset>
+          <p class="portion-status" aria-live="polite">
+            Original recipe · 3 servings
+          </p>
+          <details class="ingredients-details" open>
+            <summary>Ingredient list <span aria-hidden="true">↕</span></summary>
+            <ul class="ingredient-list">
+              <li>
+                <span class="quantity" data-quantity="2/3" id="ingr1">2/3</span
+                ><span>cup soy sauce</span>
+              </li>
+              <li>
+                <span class="quantity" data-quantity="1/4" id="ingr2">1/4</span
+                ><span>cup brown sugar</span>
+              </li>
+              <li>
+                <span class="quantity" data-quantity="1/2" id="ingr3">1/2</span
+                ><span>tsp. ground ginger</span>
+              </li>
+              <li>
+                <span class="quantity" data-quantity="1/4" id="ingr4">1/4</span
+                ><span>tsp red pepper flakes</span>
+              </li>
+              <li>
+                <span class="quantity" data-quantity="1" id="ingr5">1</span
+                ><span>tsp. hot chili powder (optional)</span>
+              </li>
+              <li>
+                <span class="quantity" data-quantity="2" id="ingr6">2</span
+                ><span>Tbsp. of water</span>
+              </li>
+              <li>
+                <span class="quantity" data-quantity="2" id="ingr7">2</span
+                ><span>Tbsp. of cornstarch</span>
+              </li>
+              <li>
+                <span class="quantity" data-quantity="2" id="ingr8">2</span
+                ><span>tsp. of vegetable oil</span>
+              </li>
+              <li>
+                <span class="quantity" data-quantity="3" id="ingr9">3</span
+                ><span
+                  >skinless boneless chicken breast halves, cut into
+                  chunks</span
+                >
+              </li>
+              <li>
+                <span class="quantity" data-quantity="1" id="ingr10">1</span
+                ><span>onion sliced</span>
+              </li>
+              <li>
+                <span class="quantity" data-quantity="3" id="ingr11">3</span
+                ><span>cups broccoli florets</span>
+              </li>
+            </ul>
+          </details>
+        </section>
+        <section class="method">
+          <div class="eyebrow">ONE STEP AT A TIME</div>
+          <h2>Let’s make it.</h2>
+          <details class="step" open>
+            <summary>
+              <span>01</span> Step 1<span class="step-toggle" aria-hidden="true"
+                >+</span
+              >
+            </summary>
+            <p>
+              Stir soy sauce, brown sugar, ginger, and red pepper flakes
+              together in a bowl to dissolve sugar into the liquid. Mix water
+              and cornstarch together in a small bowl; stir with a whisk until
+              cornstarch dissolves completely.
+            </p>
+          </details>
+          <details class="step" open>
+            <summary>
+              <span>02</span> Step 2<span class="step-toggle" aria-hidden="true"
+                >+</span
+              >
+            </summary>
+            <p>
+              Heat oil in a large skillet over high heat. Fry chicken and onion
+              in hot oil until the chicken is no longer pink in the center and
+              the onion is tender, 5 to 7 minutes. Stir broccoli with the
+              chicken and onion; saute until the broccoli is hot, about 5
+              minutes. Push the chicken and vegetables mixture to the side of
+              the skillet.
+            </p>
+          </details>
+          <details class="step" open>
+            <summary>
+              <span>03</span> Step 3<span class="step-toggle" aria-hidden="true"
+                >+</span
+              >
+            </summary>
+            <p>
+              Pour the soy sauce mixture into the vacant part of the skillet.
+              Stir the cornstarch slurry into the soy sauce mixture until the
+              color is consistent. Move the chicken and vegetables back into the
+              center to the pan; saute until the sauce thickens and coats the
+              chicken and vegetables, about 5 minutes more.
+            </p>
+          </details>
+        </section>
+      </div>
+      <section class="more-recipes">
+        <div class="eyebrow">STILL HUNGRY?</div>
+        <h2>Next on the menu.</h2>
+        <a href="../../../recipe/beef/chili/chili.html"
+          >Crockpot Chili <span aria-hidden="true">↗</span></a
+        ><a href="../../../recipe/chicken/chickenSandwich/chickenSandwich.html"
+          >Fried Chicken Sandwich <span aria-hidden="true">↗</span></a
+        >
+      </section>
+    </main>
+    <footer>
+      <a class="footer-brand" href="../../../index.html"
+        >Dynamic Recipes<span>↗</span></a
+      >
+      <div>
+        <p>Small collection. Big appetite.</p>
+        <p>A coursework project by Andres Macias.</p>
+        <a href="../../../about.html">About this project</a>
+      </div>
     </footer>
-
-    <script src="../../../js/demo.js" defer=""></script>
   </body>
 </html>

@@ -1,79 +1,73 @@
 <!doctype html>
 <html lang="en">
   <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
-    <title>Recipe visits page</title>
-    <!-- bootstrap stylesheet -->
-    <link rel="stylesheet" href="vendor/bootstrap.min.css" />
-
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <meta
+      name="description"
+      content="Three comfort-food recipes. Adjust the portions, follow the steps, and print your next kitchen favorite."
+    />
+    <title>Our story · Dynamic Recipes</title>
     <link rel="stylesheet" href="css/style.css" />
-
-    <link rel="stylesheet" href="css/demo.css" />
+    <script type="module" src="js/demo.js"></script>
   </head>
-
   <body>
-    <p class="demo-label">A coursework recipe demo by Andres Macias</p>
-
-    <div class="banner">
-      <img
-        src="images/banner-edited.jpg"
-        class="img-fluid"
-        alt="Responsive image"
-      />
-    </div>
-
-    <nav class="demo-nav" aria-label="Main navigation">
-      <a class="brand" href="index.html">Dynamic Recipes</a
-      ><a href="about.html">About this project</a>
-      <details>
-        <summary>Recipes</summary>
-        <ul>
-          <li><a href="recipe/beef/chili/chili.html">Crockpot Chili</a></li>
-          <li>
-            <a href="recipe/chicken/chickenBroc/chickenBroc.html"
-              >Chicken with Broccoli</a
-            >
-          </li>
-          <li>
-            <a href="recipe/chicken/chickenSandwich/chickenSandwich.html"
-              >Fried Chicken Sandwich</a
-            >
-          </li>
-        </ul>
-      </details>
-    </nav>
-
-    <div class="container-fluid">
-      <div class="container">
-        <div class="jumbotron jumbotron-fluid">
-          <h1>About Dynamic Recipes</h1>
+    <a class="skip" href="#main">Skip to content</a>
+    <header class="topbar">
+      <a class="wordmark" href="index.html"
+        >DR<span class="brand-dot">✳</span></a
+      >
+      <nav aria-label="Main navigation">
+        <a href="index.html#recipes">The recipes</a
+        ><a href="about.html">Our story</a>
+      </nav>
+      <button class="motion-toggle" type="button" aria-pressed="false">
+        Pause motion
+      </button>
+    </header>
+    <main id="main" class="about-main">
+      <div class="eyebrow">BEHIND THE RECIPES / THE PROJECT</div>
+      <h1>Made to learn.<br /><span>Kept for the joy.</span></h1>
+      <div class="about-grid">
+        <img
+          src="images/chickenSandwich.jpeg"
+          alt="A fried chicken sandwich served with fries"
+        />
+        <article>
+          <h2>A small collection with a hands-on story.</h2>
           <p>
-            An early web-development project exploring responsive layouts,
-            recipe instructions, printable pages, and adjustable portions.
+            Dynamic Recipes began as Andres Macias’s web-development coursework:
+            an exploration of responsive layouts, recipe instructions and
+            interactive portion controls.
           </p>
           <p>
-            Choose original, half, or double quantities on any of the three
-            recipe pages. The controls run entirely in your browser.
+            This new edition brings the same three recipes into a colorful
+            food-magazine layout. Andres directed the redesign and collaborated
+            with AI on the interface, implementation and testing.
           </p>
           <p>
-            This refreshed demo removes the old analytics and visitor-tracking
-            experiments. It has no accounts, database, or contact form.
+            Choose original, half or double quantities. Open and close the
+            directions as you cook. Print a clean copy to keep beside the stove.
           </p>
-        </div>
+          <p>
+            The demo runs entirely in your browser. No accounts, database,
+            visitor tracking or paid services.
+          </p>
+          <a class="solid-link" href="index.html#recipes"
+            >Find something delicious ↗</a
+          >
+        </article>
       </div>
-      <!--end container -->
-    </div>
-    <!--end fluid container-->
-
-    <footer class="footerStyle">
-      <p>
-        Dynamic Recipes · Original coursework, refreshed for a static demo.
-        <a href="about.html">About the project</a>
-      </p>
+    </main>
+    <footer>
+      <a class="footer-brand" href="index.html"
+        >Dynamic Recipes<span>↗</span></a
+      >
+      <div>
+        <p>Small collection. Big appetite.</p>
+        <p>A coursework project by Andres Macias.</p>
+        <a href="about.html">About this project</a>
+      </div>
     </footer>
-
-    <script src="js/demo.js" defer=""></script>
   </body>
 </html>

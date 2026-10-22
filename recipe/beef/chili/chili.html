@@ -1,404 +1,253 @@
 <!doctype html>
 <html lang="en">
   <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
-    <title>Dynamic Recipe Project</title>
-    <!-- bootstrap stylesheet -->
-    <link rel="stylesheet" href="../../../vendor/bootstrap.min.css" />
-
-    <!-- keeps track of how long the user has been on the page -->
-
-    <!-- adjust the recipe values -->
-    <script src="js/recipeAdjust.js"></script>
-    <!-- style sheet -->
-    <link rel="stylesheet" href="../../css/recipeStyle.css" />
-    <!--fonts -->
-    <link
-      href="https://fonts.googleapis.com/css?family=Permanent+Marker"
-      rel="stylesheet"
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <meta
+      name="description"
+      content="Three comfort-food recipes. Adjust the portions, follow the steps, and print your next kitchen favorite."
     />
-    <!-- icons -->
-
-    <!-- print page -->
-
-    <link rel="stylesheet" href="../../../css/demo.css" />
+    <title>Crockpot Chili · Dynamic Recipes</title>
+    <link rel="stylesheet" href="../../../css/style.css" />
+    <script type="module" src="../../../js/demo.js"></script>
   </head>
-
   <body>
-    <p class="demo-label">A coursework recipe demo by Andres Macias</p>
-    <section class="containerRecipes">
-      <nav class="demo-nav" aria-label="Main navigation">
-        <a class="brand" href="../../../index.html">Dynamic Recipes</a
-        ><a href="../../../about.html">About this project</a>
-        <details>
-          <summary>Recipes</summary>
-          <ul>
-            <li><a href="chili.html">Crockpot Chili</a></li>
-            <li>
-              <a href="../../chicken/chickenBroc/chickenBroc.html"
-                >Chicken with Broccoli</a
-              >
-            </li>
-            <li>
-              <a href="../../chicken/chickenSandwich/chickenSandwich.html"
-                >Fried Chicken Sandwich</a
-              >
-            </li>
-          </ul>
-        </details>
+    <a class="skip" href="#main">Skip to content</a>
+    <header class="topbar">
+      <a class="wordmark" href="../../../index.html"
+        >DR<span class="brand-dot">✳</span></a
+      >
+      <nav aria-label="Main navigation">
+        <a href="../../../index.html#recipes">The recipes</a
+        ><a href="../../../about.html">Our story</a>
       </nav>
-      <div class="container-fluid">
-        <div class="container recipeContainerChili">
-          <section class="featuredRecipe">
-            <div class="row">
-              <div class="col-sm-6">
-                <h4>Crockpot Chili</h4>
-                <p>recipe by: Homer J.</p>
-                <p>
-                  The chili recipe uses the finest ingredients found at the
-                  supermarket. Once you get a taste of the organic blend of
-                  spices and vegetables your tastebuds will be transported to
-                  flavor town.
-                </p>
-              </div>
-              <div class="col-sm-6">
-                <img
-                  src="../../images/chili.jpeg"
-                  class="img-fluid"
-                  alt="Responsive image"
-                />
-              </div>
-            </div>
-            <div class="row">
-              <div class="col-sm-12">
-                <h4>Difficulty: Medium</h4>
-              </div>
-              <!-- print the page -->
-              <div class="col-sm-4">
-                <button
-                  type="button"
-                  class="btn btn-success btn-sm"
-                  data-action="printPage"
-                >
-                  print
-                </button>
-              </div>
-            </div>
-          </section>
-          <!--end featured recipe-->
-
-          <section class="ingredients">
-            <div class="row ingredientHeadChili">
-              <div class="col-sm-12">
-                <h2>Ingredients</h2>
-              </div>
-
-              <div class="col-sm-2">
-                <h6>Prep time:</h6>
-
-                <p><span>25</span> min</p>
-              </div>
-
-              <div class="col-sm-2">
-                <h6>Cooking time</h6>
-                <p>6 hours</p>
-              </div>
-
-              <div class="col-sm-2">
-                <h6>Serving size:</h6>
-                <p>
-                  <span id="servSize">6</span>
-                </p>
-              </div>
-            </div>
-            <section class="recipeOptions">
-              <div class="row">
-                <div class="col-sm-3">
-                  <button
-                    type="button"
-                    class="btn btn-success"
-                    data-toggle="collapse"
-                    aria-expanded="true"
-                    aria-controls="ingredientsCollapse"
-                    data-target="#ingredientsCollapse"
-                  >
-                    Close/open recipe section
-                  </button>
-                </div>
-              </div>
-            </section>
-            <section class="collapse show" id="ingredientsCollapse">
-              <div class="col-sm-3">
-                <div class="form-group">
-                  <label for="recipeOptions">Adjust serving size:</label>
-                  <select
-                    name="sel1"
-                    class="bg-success text-white form-control"
-                    id="recipeOptions"
-                    data-action="adjustRecipe"
-                  >
-                    <option value="">Adjust recipe</option>
-                    <option value="original">Original recipe</option>
-                    <option value="half">Half recipe</option>
-                    <option value="double">Double recipe</option>
-                  </select>
-                </div>
-              </div>
-
-              <div class="row">
-                <div class="col-sm-4">
-                  <ul>
-                    <li><span id="ingr1">2</span> tbsp. cooking oil</li>
-                    <li><span id="ingr2">1</span> cup onion</li>
-                    <li><span id="ingr3">1</span> cup chopped peppers</li>
-                    <li><span id="ingr4">4</span> tbsp. chili powder</li>
-                    <li>
-                      <span id="ingr5">1</span> tsp. hot chili powder (optional)
-                    </li>
-                    <li><span id="ingr6">1</span> lb ground beef or chicken</li>
-                  </ul>
-                </div>
-                <div class="col-sm-4">
-                  <ul>
-                    <span></span>
-                    <li><span id="ingr7">2</span> cans red beans</li>
-                    <li><span id="ingr8">2</span> cans kidney beans</li>
-                    <li><span id="ingr9">2</span> cans tomato puree</li>
-                    <li><span id="ingr10">2</span> cans tomato sauce</li>
-                    <li>
-                      <span id="ingr11">1</span> cup shredded cheese (optional)
-                    </li>
-                    <li>
-                      <span id="ingr12">1/2</span> cup sour cream (optional)
-                    </li>
-                  </ul>
-                </div>
-              </div>
-            </section>
-            <!-- end ingredient list section -->
-          </section>
-          <!--end ingrediants section -->
-
-          <section class="directionsChili">
-            <div class="row">
-              <div class="col-sm-12">
-                <h2>Directions</h2>
-              </div>
-            </div>
-            <div class="row">
-              <section class="directionsButton">
-                <div class="row">
-                  <div class="col-sm-12">
-                    <button
-                      type="button"
-                      class="btn btn-success"
-                      data-toggle="collapse"
-                      aria-expanded="true"
-                      aria-controls="directionsCollapse"
-                      data-target="#directionsCollapse"
-                    >
-                      step 1
-                    </button>
-                  </div>
-                </div>
-              </section>
-              <div class="col-sm-6 collapse show" id="directionsCollapse">
-                <p>Heat cooking oil in a 2 quart skillet.</p>
-              </div>
-            </div>
-            <div class="row">
-              <section class="directionsButton">
-                <div class="row">
-                  <div class="col-sm-12">
-                    <button
-                      type="button"
-                      class="btn btn-success"
-                      data-toggle="collapse"
-                      aria-expanded="true"
-                      aria-controls="directionsCollapse2"
-                      data-target="#directionsCollapse2"
-                    >
-                      step 2
-                    </button>
-                  </div>
-                </div>
-              </section>
-              <div class="col-sm-6 collapse show" id="directionsCollapse2">
-                <p>Saute onions and peppers for 5 minutes.</p>
-              </div>
-            </div>
-            <div class="row">
-              <section class="directionsButton">
-                <div class="row">
-                  <div class="col-sm-12">
-                    <button
-                      type="button"
-                      class="btn btn-success"
-                      data-toggle="collapse"
-                      aria-expanded="true"
-                      aria-controls="directionsCollapse3"
-                      data-target="#directionsCollapse3"
-                    >
-                      step 3
-                    </button>
-                  </div>
-                </div>
-              </section>
-              <div class="col-sm-6 collapse show" id="directionsCollapse3">
-                <p>Add spices and stir for 30 seconds.</p>
-              </div>
-            </div>
-            <div class="row">
-              <section class="directionsButton">
-                <div class="row">
-                  <div class="col-sm-12">
-                    <button
-                      type="button"
-                      class="btn btn-success"
-                      data-toggle="collapse"
-                      aria-expanded="true"
-                      aria-controls="directionsCollapse4"
-                      data-target="#directionsCollapse4"
-                    >
-                      step 4
-                    </button>
-                  </div>
-                </div>
-              </section>
-              <div class="col-sm-6 collapse show" id="directionsCollapse4">
-                <p>
-                  Add ground meat and cook until browned. Approximately 15
-                  minutes.
-                </p>
-              </div>
-            </div>
-            <div class="row">
-              <section class="directionsButton">
-                <div class="row">
-                  <div class="col-sm-12">
-                    <button
-                      type="button"
-                      class="btn btn-success"
-                      data-toggle="collapse"
-                      aria-expanded="true"
-                      aria-controls="directionsCollapse5"
-                      data-target="#directionsCollapse5"
-                    >
-                      step 5
-                    </button>
-                  </div>
-                </div>
-              </section>
-              <div class="col-sm-6 collapse show" id="directionsCollapse5">
-                <p>Pour contents of skillet into 3 quart crock pot.</p>
-              </div>
-            </div>
-            <div class="row">
-              <section class="directionsButton">
-                <div class="row">
-                  <div class="col-sm-12">
-                    <button
-                      type="button"
-                      class="btn btn-success"
-                      data-toggle="collapse"
-                      aria-expanded="true"
-                      aria-controls="directionsCollapse6"
-                      data-target="#directionsCollapse6"
-                    >
-                      step 6
-                    </button>
-                  </div>
-                </div>
-              </section>
-              <div class="col-sm-6 collapse show" id="directionsCollapse6">
-                <p>Rinse beans and place in crockpot.</p>
-              </div>
-            </div>
-            <div class="row">
-              <section class="directionsButton">
-                <div class="row">
-                  <div class="col-sm-12">
-                    <button
-                      type="button"
-                      class="btn btn-success"
-                      data-toggle="collapse"
-                      aria-expanded="true"
-                      aria-controls="directionsCollapse7"
-                      data-target="#directionsCollapse7"
-                    >
-                      step 7
-                    </button>
-                  </div>
-                </div>
-              </section>
-              <div class="col-sm-6 collapse show" id="directionsCollapse7">
-                <p>Open and pour tomato puree and sauce into crockpot.</p>
-              </div>
-            </div>
-            <div class="row">
-              <section class="directionsButton">
-                <div class="row">
-                  <div class="col-sm-12">
-                    <button
-                      type="button"
-                      class="btn btn-success"
-                      data-toggle="collapse"
-                      aria-expanded="true"
-                      aria-controls="directionsCollapse8"
-                      data-target="#directionsCollapse8"
-                    >
-                      step 8
-                    </button>
-                  </div>
-                </div>
-              </section>
-              <div class="col-sm-6 collapse show" id="directionsCollapse8">
-                <p>Cover crockpot and cook on low for 6 hours.</p>
-              </div>
-            </div>
-            <div class="row">
-              <section class="directionsButton">
-                <div class="row">
-                  <div class="col-sm-12">
-                    <button
-                      type="button"
-                      class="btn btn-success"
-                      data-toggle="collapse"
-                      aria-expanded="true"
-                      aria-controls="directionsCollapse9"
-                      data-target="#directionsCollapse9"
-                    >
-                      step 9
-                    </button>
-                  </div>
-                </div>
-              </section>
-              <div class="col-sm-6 collapse show" id="directionsCollapse9">
-                <p>
-                  Serve into individual bowls and top with sour cream and
-                  cheese, if desired.
-                </p>
-              </div>
-            </div>
-          </section>
-          <!-- end directions section -->
-        </div>
-
-        <!--end container -->
+      <button class="motion-toggle" type="button" aria-pressed="false">
+        Pause motion
+      </button>
+    </header>
+    <main id="main" class="recipe-page">
+      <div class="recipe-heading">
+        <a class="back-link" href="../../../index.html#recipes"
+          >← Back to the collection</a
+        ><span class="eyebrow">RECIPE 01 / SLOW & SOULFUL</span>
+        <h1>Crockpot Chili</h1>
+        <p>
+          A slow-simmered bowl of beans, warming spices and all the good
+          toppings.
+        </p>
       </div>
-
-      <!--end fluid container-->
-    </section>
-    <!--end container for recipes -->
-    <footer class="footerStyle">
-      <p>
-        Dynamic Recipes · Original coursework, refreshed for a static demo.
-        <a href="../../../about.html">About the project</a>
-      </p>
+      <div class="recipe-spread">
+        <div class="recipe-cover">
+          <img src="../../images/chili.jpeg" alt="Crockpot Chili" /><span
+            class="cover-mark"
+            aria-hidden="true"
+            >GOOD<br />FOOD<br />ONLY ✳</span
+          >
+          <p>Original coursework recipe credit: Homer J.</p>
+        </div>
+        <section class="recipe-facts" aria-label="Recipe details">
+          <div class="fact-title">
+            THE GOOD STUFF <span aria-hidden="true">↙</span>
+          </div>
+          <dl>
+            <div>
+              <dt>Prep</dt>
+              <dd>25 min</dd>
+            </div>
+            <div>
+              <dt>Cook</dt>
+              <dd>6 hours</dd>
+            </div>
+            <div>
+              <dt>Difficulty</dt>
+              <dd>Medium</dd>
+            </div>
+            <div>
+              <dt>Servings</dt>
+              <dd><span id="servSize" data-quantity="6">6</span></dd>
+            </div>
+          </dl>
+          <p>
+            Cooking times stay the same when portions change. Adjust pan size or
+            cook in batches as needed.
+          </p>
+          <button class="print-button" type="button">
+            Print recipe <span aria-hidden="true">↗</span>
+          </button>
+        </section>
+      </div>
+      <div class="cook-layout">
+        <section class="ingredients-panel">
+          <div class="eyebrow">MAKE IT YOUR SIZE</div>
+          <h2>Ingredients</h2>
+          <fieldset class="portion-controls">
+            <legend>Adjust portions</legend>
+            <button type="button" data-scale="0.5" aria-pressed="false">
+              ½ Half</button
+            ><button type="button" data-scale="1" aria-pressed="true">
+              1× Original</button
+            ><button type="button" data-scale="2" aria-pressed="false">
+              2× Double
+            </button>
+          </fieldset>
+          <p class="portion-status" aria-live="polite">
+            Original recipe · 6 servings
+          </p>
+          <details class="ingredients-details" open>
+            <summary>Ingredient list <span aria-hidden="true">↕</span></summary>
+            <ul class="ingredient-list">
+              <li>
+                <span class="quantity" data-quantity="2" id="ingr1">2</span
+                ><span>tbsp. cooking oil</span>
+              </li>
+              <li>
+                <span class="quantity" data-quantity="1" id="ingr2">1</span
+                ><span>cup onion</span>
+              </li>
+              <li>
+                <span class="quantity" data-quantity="1" id="ingr3">1</span
+                ><span>cup chopped peppers</span>
+              </li>
+              <li>
+                <span class="quantity" data-quantity="4" id="ingr4">4</span
+                ><span>tbsp. chili powder</span>
+              </li>
+              <li>
+                <span class="quantity" data-quantity="1" id="ingr5">1</span
+                ><span>tsp. hot chili powder (optional)</span>
+              </li>
+              <li>
+                <span class="quantity" data-quantity="1" id="ingr6">1</span
+                ><span>lb ground beef or chicken</span>
+              </li>
+              <li>
+                <span class="quantity" data-quantity="2" id="ingr7">2</span
+                ><span>cans red beans</span>
+              </li>
+              <li>
+                <span class="quantity" data-quantity="2" id="ingr8">2</span
+                ><span>cans kidney beans</span>
+              </li>
+              <li>
+                <span class="quantity" data-quantity="2" id="ingr9">2</span
+                ><span>cans tomato puree</span>
+              </li>
+              <li>
+                <span class="quantity" data-quantity="2" id="ingr10">2</span
+                ><span>cans tomato sauce</span>
+              </li>
+              <li>
+                <span class="quantity" data-quantity="1" id="ingr11">1</span
+                ><span>cup shredded cheese (optional)</span>
+              </li>
+              <li>
+                <span class="quantity" data-quantity="1/2" id="ingr12">1/2</span
+                ><span>cup sour cream (optional)</span>
+              </li>
+            </ul>
+          </details>
+        </section>
+        <section class="method">
+          <div class="eyebrow">ONE STEP AT A TIME</div>
+          <h2>Let’s make it.</h2>
+          <details class="step" open>
+            <summary>
+              <span>01</span> Step 1<span class="step-toggle" aria-hidden="true"
+                >+</span
+              >
+            </summary>
+            <p>Heat cooking oil in a 2 quart skillet.</p>
+          </details>
+          <details class="step" open>
+            <summary>
+              <span>02</span> Step 2<span class="step-toggle" aria-hidden="true"
+                >+</span
+              >
+            </summary>
+            <p>Saute onions and peppers for 5 minutes.</p>
+          </details>
+          <details class="step" open>
+            <summary>
+              <span>03</span> Step 3<span class="step-toggle" aria-hidden="true"
+                >+</span
+              >
+            </summary>
+            <p>Add spices and stir for 30 seconds.</p>
+          </details>
+          <details class="step" open>
+            <summary>
+              <span>04</span> Step 4<span class="step-toggle" aria-hidden="true"
+                >+</span
+              >
+            </summary>
+            <p>
+              Add ground meat and cook until browned. Approximately 15 minutes.
+            </p>
+          </details>
+          <details class="step" open>
+            <summary>
+              <span>05</span> Step 5<span class="step-toggle" aria-hidden="true"
+                >+</span
+              >
+            </summary>
+            <p>Pour contents of skillet into 3 quart crock pot.</p>
+          </details>
+          <details class="step" open>
+            <summary>
+              <span>06</span> Step 6<span class="step-toggle" aria-hidden="true"
+                >+</span
+              >
+            </summary>
+            <p>Rinse beans and place in crockpot.</p>
+          </details>
+          <details class="step" open>
+            <summary>
+              <span>07</span> Step 7<span class="step-toggle" aria-hidden="true"
+                >+</span
+              >
+            </summary>
+            <p>Open and pour tomato puree and sauce into crockpot.</p>
+          </details>
+          <details class="step" open>
+            <summary>
+              <span>08</span> Step 8<span class="step-toggle" aria-hidden="true"
+                >+</span
+              >
+            </summary>
+            <p>Cover crockpot and cook on low for 6 hours.</p>
+          </details>
+          <details class="step" open>
+            <summary>
+              <span>09</span> Step 9<span class="step-toggle" aria-hidden="true"
+                >+</span
+              >
+            </summary>
+            <p>
+              Serve into individual bowls and top with sour cream and cheese, if
+              desired.
+            </p>
+          </details>
+        </section>
+      </div>
+      <section class="more-recipes">
+        <div class="eyebrow">STILL HUNGRY?</div>
+        <h2>Next on the menu.</h2>
+        <a href="../../../recipe/chicken/chickenBroc/chickenBroc.html"
+          >Chicken with Broccoli <span aria-hidden="true">↗</span></a
+        ><a href="../../../recipe/chicken/chickenSandwich/chickenSandwich.html"
+          >Fried Chicken Sandwich <span aria-hidden="true">↗</span></a
+        >
+      </section>
+    </main>
+    <footer>
+      <a class="footer-brand" href="../../../index.html"
+        >Dynamic Recipes<span>↗</span></a
+      >
+      <div>
+        <p>Small collection. Big appetite.</p>
+        <p>A coursework project by Andres Macias.</p>
+        <a href="../../../about.html">About this project</a>
+      </div>
     </footer>
-
-    <script src="../../../js/demo.js" defer=""></script>
   </body>
 </html>
